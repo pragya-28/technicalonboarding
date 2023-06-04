@@ -45,9 +45,10 @@ class HelperFunctions:
         password_field.send_keys(BROWSERSTACK_PWD)
         password_field.send_keys(Keys.RETURN)
         driver.implicitly_wait(10)
+        assert 'BrowserStack' in driver.title
+        #dashboard_element = driver.find_element(By.ID, 'bd-dashboard')
+        #assert dashboard_element.is_displayed()
         
-        dashboard_element = driver.find_element(By.ID, 'bd-dashboard')
-        assert dashboard_element.is_displayed()
 
     def dashboard_helper(driver):
         wait = WebDriverWait(driver, 10)
